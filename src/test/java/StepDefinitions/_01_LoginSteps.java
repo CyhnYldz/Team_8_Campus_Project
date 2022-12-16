@@ -14,10 +14,10 @@ import java.time.Duration;
 public class _01_LoginSteps {
     DialogContent dc=new DialogContent();
 
-    @Given("Naviagate to Campus")
-    public void naviagateToCampus() {
+    @Given("Navigate to Campus")
+    public void navigateToCampus() {
 
-        GWD.getDriver().get("https://campus.techno.study/");
+        GWD.getDriver().get("https://test.mersys.io/");
         GWD.getDriver().manage().window().maximize();
     }
 
@@ -25,13 +25,13 @@ public class _01_LoginSteps {
     public void enterUsernameAndPasswordAndClickLoginButton() {
 
 
-        dc.findAndSend("username", "username");
-        dc.findAndSend("password", "password");
+        dc.findAndSend("username", "turkeyts");
+        dc.findAndSend("password", "TechnoStudy123");
         dc.findAndClick("loginButton");
     }
 
-    @Then("User should login successfuly")
-    public void userShouldLoginSuccessfuly() {
+    @Then("User should login successfully")
+    public void userShouldLoginSuccessfully() {
         dc.findAndContainsText("txtTechnoStudy","Techno Study");
         dc.findAndClick("acceptCookies");
     }
