@@ -32,7 +32,8 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//ms-add-button[contains(@tooltip,'TITLE.ADD')]//button")
     private WebElement addButton;
 
-
+    @FindBy(xpath = "//ms-add-button[contains(@tooltip,'TITLE.ADD')]//button")
+    private WebElement deneme;
 
 
 
