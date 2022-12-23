@@ -29,6 +29,10 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//button[text()='Accept all cookies']")
     private WebElement acceptCookies;
 
+    @FindBy(xpath = "//ms-add-button[contains(@tooltip,'TITLE.ADD')]//button")
+    private WebElement addButton;
+
+
 
 
 
@@ -54,6 +58,7 @@ public class DialogContent extends Parent {
         switch (strlement) {
             case "loginButton":myElement = loginButton;break;
             case "acceptCookies": myElement = acceptCookies;break;
+            case "addButton": myElement = addButton;break;
 
         }
 

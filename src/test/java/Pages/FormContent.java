@@ -11,8 +11,8 @@ public class FormContent extends Parent{
         PageFactory.initElements(GWD.getDriver(), this);
     }
 
-    @FindBy(xpath = "(//mat-select[@formcontrolname='id']/div/div)[1]")
-    private WebElement academicPeriod;
+    @FindBy(css = "[data-placeholder='Name'][aria-required='true']")
+    private WebElement nameInput;
 
 
 
@@ -20,8 +20,7 @@ public class FormContent extends Parent{
     public void findAndClick(String strlement) {
         //element get :burda string isimden weblemente ulaşıcam
         switch (strlement) {
-            case "academicPeriod":
-                myElement = academicPeriod;
+            case "academicPeriod": myElement = nameInput;
                 break;
 
 
@@ -29,6 +28,12 @@ public class FormContent extends Parent{
 
         clickFunction(myElement);
     }
-
-
+    public void findAndSend(String strlement, String value) {
+        //element get :burda string isimden weblemente ulaşıcam
+        switch (strlement) {
+            case "nameInput": myElement = nameInput;
+                break;
+        }
+        sendKeysFunction(myElement, value);
+    }
 }
