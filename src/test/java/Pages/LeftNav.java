@@ -20,8 +20,6 @@ public class LeftNav extends Parent{
     @FindBy(xpath="//span[text()='Document Types']")
     private WebElement documentType;
 
-
-
     WebElement myElement;
     public void findAndClick(String strlement)
     {
@@ -30,6 +28,7 @@ public class LeftNav extends Parent{
         {
             case "setupOne" : myElement=setupOne;break;
             case "parameters" : myElement=parameters;break;
+
             case "documentType" : myElement=documentType;break;
 
         }
