@@ -18,7 +18,7 @@ public class Parent {
     public void sendKeysFunction(WebElement element, String value)
     {
         waitUntilVisible(element); // gözükene kadar bekle
-        scrollToelement(element);  // elemente kadar scroll yap (javascriptexecuter)
+        scrollToElement(element);  // elemente kadar scroll yap (javascriptexecuter)
         element.clear();           //        temizle  (clear)
         element.sendKeys(value);//        değeri gönder (sendKeys)
     }
@@ -26,7 +26,7 @@ public class Parent {
     public void clickFunction(WebElement element)
     {
         waitUntilClickable(element); // Clickable olana kadar bekle
-        scrollToelement(element);  // elemente kadar scroll yap (javascriptexecuter)
+        scrollToElement(element);  // elemente kadar scroll yap (javascriptexecuter)
         element.click();           //        click
     }
 
@@ -35,7 +35,7 @@ public class Parent {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    public void scrollToelement(WebElement element)
+    public void scrollToElement(WebElement element)
     {
         JavascriptExecutor js=(JavascriptExecutor) GWD.getDriver();
         js.executeScript("arguments[0].scrollIntoView();", element);
