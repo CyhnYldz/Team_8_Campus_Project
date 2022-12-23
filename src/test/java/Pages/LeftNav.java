@@ -14,6 +14,8 @@ public class LeftNav extends Parent{
     @FindBy(xpath="(//span[text()='Setup'])[1]")
     private WebElement setupOne;
 
+    @FindBy(xpath="(//span[text()='Parameters'])")
+    private WebElement parameters;
 
     WebElement myElement;
     public void findAndClick(String strlement)
@@ -22,7 +24,7 @@ public class LeftNav extends Parent{
         switch (strlement)
         {
             case "setupOne" : myElement=setupOne;break;
-
+            case "parameters" : myElement=parameters;break;
         }
 
         clickFunction(myElement);
