@@ -57,4 +57,11 @@ public class _00_GeneralSteps {
         for(String strButtonName : listElemanlar)
             fc.findAndClick(strButtonName);
     }
+    @And("User delete item from Dialog")
+    public void userDeleteItemFromDialog(DataTable elemanlar) {
+        List<String> listElemanlar= elemanlar.asList(String.class);
+
+        for(String strButtonName : listElemanlar)
+            dc.findAndDelete(strButtonName);
+    }
 }
