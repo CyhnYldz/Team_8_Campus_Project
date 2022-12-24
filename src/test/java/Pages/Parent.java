@@ -14,7 +14,7 @@ import java.time.Duration;
 
 public class Parent {
 
-    WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(3));
+    WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(5));
     public void sendKeysFunction(WebElement element, String value)
     {
         waitUntilVisible(element); // gözükene kadar bekle
@@ -54,7 +54,7 @@ public class Parent {
         new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).perform(); // açık dialog kutusu varsa kapansın
     }
 
-    public void waitUntilLoading()
+    public  void waitUntilLoading()
     {
         wait.until(ExpectedConditions.numberOfElementsToBe(By.cssSelector("fuse-progress-bar > *"), 0));
         // progressbar ın çocukları

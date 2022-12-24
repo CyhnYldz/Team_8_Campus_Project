@@ -3,9 +3,18 @@ package StepDefinitions;
 import Pages.DialogContent;
 import Pages.FormContent;
 import Pages.LeftNav;
+import Pages.Parent;
+import Utilities.GWD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 public class _00_GeneralSteps {
@@ -63,5 +72,51 @@ public class _00_GeneralSteps {
 
         for(String strButtonName : listElemanlar)
             dc.findAndDelete(strButtonName);
+    }
+
+    @Then("Success message should be displayed")
+    public void successMessageShouldBeDisplayed() {
+        dc.findAndContainsText("successMessage","success");
+    }
+
+
+
+
+
+
+    @And("Find and Edit on the {string} element in the GradeLevel Content")
+    public void findAndEditOnTheElementInTheGradeLevelContent(String name) {
+        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.numberOfElementsToBe(By.cssSelector("fuse-progress-bar > *"), 0));
+        List<WebElement> liste=GWD.getDriver().findElements(By.xpath("(//tbody[@role='rowgroup']//tr//td)"));
+        String editPath="(//*[@data-icon='pen-to-square'])";
+        for(int i=0;i< liste.size() ; i++ ) {
+            if (liste.get(i).getText().equalsIgnoreCase(name)){
+                editPath=editPath.concat("["+((i/7)+1)+"]");
+
+                WebElement edit= GWD.getDriver().findElement(By.xpath(editPath));
+                edit.click();
+
+            }
+        }
+
+
+    }
+
+    @And("Find and Delete on the {string} element in the GradeLevel Content")
+    public void findAndDeleteOnTheElementInTheGradeLevelContent(String name) {
+        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.numberOfElementsToBe(By.cssSelector("fuse-progress-bar > *"), 0));
+        List<WebElement> liste=GWD.getDriver().findElements(By.xpath("(//tbody[@role='rowgroup']//tr//td)"));
+        String editPath="(//*[@data-icon='trash-can'])";
+        for(int i=0;i< liste.size() ; i++ ) {
+            if (liste.get(i).getText().equalsIgnoreCase(name)){
+                editPath=editPath.concat("["+((i/7)+1)+"]");
+
+                WebElement edit= GWD.getDriver().findElement(By.xpath(editPath));
+                edit.click();
+            }
+        }
+
     }
 }
