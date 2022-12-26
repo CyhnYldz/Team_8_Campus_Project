@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.List;
+
 public class DialogContent extends Parent {
 
     //ihityacınız olan locatorların mükerrer olmaması için sonlarına ad ve soyadlarınızın baş harflerini yazın -> loginButtonCY gibi
@@ -46,6 +48,8 @@ public class DialogContent extends Parent {
 
     @FindBy(xpath = "//ms-text-field[@formcontrolname='name']//input")
     private WebElement nameInput;
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='shortName']//input")
+    private WebElement shortName;
 
     @FindBy(xpath = "//ms-text-field[@formcontrolname='code']//input")
     private WebElement codeInput;
@@ -65,6 +69,15 @@ public class DialogContent extends Parent {
 
     @FindBy(xpath = "//mat-form-field//input[@data-placeholder='Name']")
     private WebElement searchInput;
+
+    @FindBy(xpath = "(//*[@data-icon='pen-to-square'])[1]")
+    private WebElement gradeLevelEdit;
+
+    @FindBy(xpath = "(//tbody[@role='rowgroup']//tr//td)")
+    private List<WebElement> gradeLevelList;
+
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='order']//input")
+    private WebElement GrLvlOrder;
 
     WebElement myElement;
 
@@ -86,6 +99,12 @@ public class DialogContent extends Parent {
 
             case "searchInput":
                 myElement = searchInput;
+                break;
+            case "shortName":
+                myElement = shortName;
+                break;
+            case "GrLvlOrder":
+                myElement = GrLvlOrder;
                 break;
 
         }
@@ -119,6 +138,9 @@ public class DialogContent extends Parent {
                 break;
             case "toggleBar":
                 myElement = toggleBar;
+                break;
+            case "gradeLevelEdit":
+                myElement = gradeLevelEdit;
                 break;
         }
 
