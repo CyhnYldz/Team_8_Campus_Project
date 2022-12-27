@@ -69,6 +69,8 @@ public class DialogContent extends Parent {
 
     @FindBy(xpath = "//mat-form-field//input[@data-placeholder='Name']")
     private WebElement searchInput;
+    @FindBy(xpath = "//mat-form-field//input[@data-placeholder='Description']")
+    private WebElement searchInputDescription;
 
     @FindBy(xpath = "(//*[@data-icon='pen-to-square'])[1]")
     private WebElement gradeLevelEdit;
@@ -79,8 +81,17 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//ms-text-field[@formcontrolname='order']//input")
     private WebElement GrLvlOrder;
 
+
     @FindBy(xpath = "(//ms-edit-button//button)[1]")
     private WebElement editButton;
+
+
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='description']//input")
+    private WebElement description;
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='code']//input")
+    private WebElement integrationCode;
+    @FindBy(xpath = "//ms-integer-field[@formcontrolname='priority']//input")
+    private WebElement priority;
 
 
     WebElement myElement;
@@ -109,6 +120,18 @@ public class DialogContent extends Parent {
                 break;
             case "GrLvlOrder":
                 myElement = GrLvlOrder;
+                break;
+            case "description":
+                myElement = description;
+                break;
+            case "integrationCode":
+                myElement = integrationCode;
+                break;
+            case "priority":
+                myElement = priority;
+                break;
+                case "searchInputDescription":
+                myElement = searchInputDescription;
                 break;
 
         }
