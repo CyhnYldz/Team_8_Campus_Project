@@ -27,4 +27,3 @@ Feature: Document Types Functionality
     Examples:
       | name |
       | MetCan |
-

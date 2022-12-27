@@ -8,6 +8,7 @@ import Utilities.GWD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -79,9 +80,18 @@ public class _00_GeneralSteps {
         dc.findAndContainsText("successMessage","success");
     }
 
+    @When("User Edit The {string} {string}")
+    public void userEditThe(String searchText, String searchText2) {
 
+        dc.findAndEdit(searchText, searchText2);
 
+    }
 
+    @When("User Delete The {string}")
+    public void userDeleteThe(String searchText) {
+
+        dc.findAndDelete(searchText);
+    }
 
 
     @And("Find and Edit on the {string} element in the GradeLevel Content")
@@ -99,8 +109,6 @@ public class _00_GeneralSteps {
 
             }
         }
-
-
     }
 
     @And("Find and Delete on the {string} element in the GradeLevel Content")
@@ -117,7 +125,6 @@ public class _00_GeneralSteps {
                 edit.click();
             }
         }
-
     }
 
     @Then("Wait until results are ready")

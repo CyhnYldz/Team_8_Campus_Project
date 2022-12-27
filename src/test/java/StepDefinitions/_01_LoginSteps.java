@@ -24,7 +24,6 @@ public class _01_LoginSteps {
     @When("Enter username and password and click Login button")
     public void enterUsernameAndPasswordAndClickLoginButton() {
 
-
         dc.findAndSend("username", "turkeyts");
         dc.findAndSend("password", "TechnoStudy123");
         dc.findAndClick("loginButton");
