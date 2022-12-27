@@ -8,19 +8,18 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
-
 @CucumberOptions(
 
-        features = {"src/test/java/FeatureFiles/T8CP-10_GradeLevels.feature"},
+        features = {"src/test/java/FeatureFiles/T8CP-11_Discounts.feature"},
         glue = {"StepDefinitions"},
         plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
-public class T8CP_10_TestRunner extends AbstractTestNGCucumberTests {
+public class T8CP_11_TestRunner extends AbstractTestNGCucumberTests {
 
     @BeforeClass// sıkıntı çıkarsa (alwaysRun=true) yap
     @Parameters("browser")
     public void beforeClass(String browser){
-        // * browser türünü GWD'ye gönder
+
         GWD.setThreadBrowserName(browser);
 
     }

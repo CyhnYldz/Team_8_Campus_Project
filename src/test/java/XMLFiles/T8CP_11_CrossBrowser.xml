@@ -1,0 +1,30 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="T8CP_10_Suit">
+
+    <test name="test_1_Chrome">
+
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="Runners.T8CP_11_TestRunner"/>
+        </classes>
+    </test>
+    <test name="test_2_FireFox">
+
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="Runners.T8CP_11_TestRunner"/>
+        </classes>
+    </test>
+
+    <test name="test_3_Edge">
+
+        <parameter name="browser" value="edge"/>
+
+        <classes>
+            <class name="Runners.T8CP_11_TestRunner"/>
+
+        </classes>
+    </test>
+
+</suite>
