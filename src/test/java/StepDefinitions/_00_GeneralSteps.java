@@ -119,4 +119,11 @@ public class _00_GeneralSteps {
         }
 
     }
+
+    @Then("Wait until results are ready")
+    public void waitUntilResultsAreReady() {
+        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.numberOfElementsToBe(By.cssSelector("fuse-progress-bar > *"), 0));
+
+    }
 }
