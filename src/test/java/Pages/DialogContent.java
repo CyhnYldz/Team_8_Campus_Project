@@ -79,6 +79,10 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//ms-text-field[@formcontrolname='order']//input")
     private WebElement GrLvlOrder;
 
+    @FindBy(xpath = "(//ms-edit-button//button)[1]")
+    private WebElement editButton;
+
+
     WebElement myElement;
 
     public void findAndSend(String strlement, String value) {
@@ -142,6 +146,11 @@ public class DialogContent extends Parent {
             case "gradeLevelEdit":
                 myElement = gradeLevelEdit;
                 break;
+
+            case "editButton":
+                myElement = editButton;
+                break;
+
         }
 
         clickFunction(myElement);
@@ -184,5 +193,18 @@ public class DialogContent extends Parent {
         findAndClick("deleteDialogBtn"); // dilogdaki silme butonuna bas
 
     }
+
+    public void findAndEdit(String searchText, String searchText2) {
+
+        findAndSend("searchInput", searchText);
+        findAndClick("searchButton");
+
+        waitUntilLoading();
+
+        findAndClick("editButton");
+        findAndSend("nameInput", searchText2);
+
+    }
+
 
 }
