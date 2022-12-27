@@ -1,49 +1,54 @@
-Feature: Grade Levels Functionality
+Feature:  GradeLevels Functionalities
 
   Background:
-    Given Navigate to Campus
+    Given  Navigate to Campus
     When Enter username and password and click Login button
     Then User should login successfully
 
-  Scenario Outline: Add, Edit and Delete Grade Level
-    And Click on the element in left nav
+  Scenario Outline: Add Grade Level
+    Given Click on the element in left nav
       | setupOne    |
       | parameters  |
       | gradeLevels |
-
-    And Click on the element in the Dialog Content
+    When Click on the element in the Dialog Content
       | addButton |
-
-    And User sending the keys in Dialog Content
+    Then User sending the keys in Dialog Content
       | nameInput  | <name>      |
       | shortName  | <shortName> |
       | GrLvlOrder | <order>     |
-
-    And Click on the element in the Dialog Content
-      | saveButton |
-
-    Then Success message should be displayed
-
-#    Edit GradeLevel
-
-    And  Find and Edit on the "<name>" element in the GradeLevel Content
-
-    And User sending the keys in Dialog Content
-      | shortName | <nameEdit> |
     And Click on the element in the Dialog Content
       | saveButton |
     Then Success message should be displayed
+    Examples:
+      | name    | shortName | order |
+      | axLevel1 | xLvl1     | 5  |
 
-#    Delete GradeLevel
+  Scenario Outline: Edit Grade Level
+    Given Click on the element in left nav
+      | setupOne    |
+      | parameters  |
+      | gradeLevels |
+    When Find and Edit on the "<name>" element in the GradeLevel Content
+    Then User sending the keys in Dialog Content
+      | shortName | <shortName> |
+    And Click on the element in the Dialog Content
+      | saveButton |
+    Then Success message should be displayed
+    Examples:
+      | name    | shortName |
+      | axLevel1 | xLvl1E     |
 
-    And  Find and Delete on the "<name>" element in the GradeLevel Content
+  Scenario Outline: Delete Grade Level
+    Given Click on the element in left nav
+      | setupOne    |
+      | parameters  |
+      | gradeLevels |
+    When Find and Delete on the "<name>" element in the GradeLevel Content
     And Click on the element in the Dialog Content
       | deleteDialogBtn |
     Then Success message should be displayed
-
-
-
     Examples:
-      | name    | shortName | order | nameEdit |
-      | xLevel1 | xLvl1     | 101   | xLvl1E   |
+      | name    |
+      | axLevel1 |
+
 

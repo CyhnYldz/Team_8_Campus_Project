@@ -96,6 +96,7 @@ public class _00_GeneralSteps {
 
     @And("Find and Edit on the {string} element in the GradeLevel Content")
     public void findAndEditOnTheElementInTheGradeLevelContent(String name) {
+
         WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(5));
         wait.until(ExpectedConditions.numberOfElementsToBe(By.cssSelector("fuse-progress-bar > *"), 0));
         List<WebElement> liste=GWD.getDriver().findElements(By.xpath("(//tbody[@role='rowgroup']//tr//td)"));

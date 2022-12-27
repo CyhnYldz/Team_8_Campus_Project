@@ -11,7 +11,7 @@ import org.testng.annotations.Parameters;
 
 @CucumberOptions(
 
-        features = {"src/test/java/FeatureFiles/T8CP-10_Multiple.feature"},
+        features = {"src/test/java/FeatureFiles/T8CP-10_GradeLevels.feature"},
         glue = {"StepDefinitions"},
         plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
