@@ -18,23 +18,8 @@ Feature: School Locations Functionality
       | codeInput  | <codeInputData> |
     And Click on the element in the Dialog Content
       | toogleBar |
-    And Click on the element in the Dialog Content
-      | section|
-    And User sending the keys in Dialog Content
-      | shortName  | <shortNameAdd> |
-      | nameInput | <name>  |
-    And Click on the element in the Dialog Content
-      | schoolDepartmentSectionSaveButton|
-    And Click on the element in the Dialog Content
-      | constants|
-    And User sending the keys in Dialog Content
-      | valueInput | <value>  |
-      | keyInput  | <key> |
 
-    And Click on the element in the Dialog Content
-      | schoolDepartmentSectionSaveButton|
-
-    And Click on the element in the Dialog Content
+        And Click on the element in the Dialog Content
       |saveButton|
     Then Success message should be displayed
 
@@ -44,23 +29,10 @@ Feature: School Locations Functionality
     And User sending the keys in Dialog Content
       | codeInput | <codeEdit> |
       | nameInput | <nameEdit> |
-    And Click on the element in the Dialog Content
-      | section|
-    And User sending the keys in Dialog Content
-      | shortName  | <shorNameEdit> |
-      | nameInput | <nameEdit>  |
-    And Click on the element in the Dialog Content
-      | schoolDepartmentSectionSaveButton|
-    And Click on the element in the Dialog Content
-      | constants|
-    And User sending the keys in Dialog Content
-      | valueInput | <valueEdit>  |
-      | keyInput  | <keyEdit> |
-    And Click on the element in the Dialog Content
-      | schoolDepartmentSectionSaveButton|
+
     And Click on the element in the Dialog Content
       |saveButton|
-    Then Success message should be displayed
+
     And Find and Delete on the "<nameEdit>" element in the GradeLevel Content
 
     And Click on the element in the Dialog Content
@@ -69,7 +41,7 @@ Feature: School Locations Functionality
     Then Success message should be displayed
 
     Examples:
-      | name    | codeInputData | shortNameAdd |codeEdit|key   | value |nameEdit|keyEdit| valueEdit|shorNameEdit|
-      | emin123 | xLvl1             |emin1     | 12345  |asd   | xxxxx |emin456 | ComboBox |othe|shortNameEdit|
+      | name    | codeInputData | shortNameAdd |codeEdit|key   | value |nameEdit|
+      | emin123 | xLvl1             |emin1     | 12345  |asd   | xxxxx |emin456 |
 
 
