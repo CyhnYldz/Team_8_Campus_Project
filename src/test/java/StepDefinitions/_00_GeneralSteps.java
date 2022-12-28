@@ -10,7 +10,9 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -133,5 +135,10 @@ public class _00_GeneralSteps {
         WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(5));
         wait.until(ExpectedConditions.numberOfElementsToBe(By.cssSelector("fuse-progress-bar > *"), 0));
 
+    }
+
+    @And("User press ESC button on keyboard")
+    public void userPressESCButtonOnKeyboard() {
+        new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).perform();
     }
 }

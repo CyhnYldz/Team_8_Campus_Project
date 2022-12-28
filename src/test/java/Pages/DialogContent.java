@@ -93,6 +93,17 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//ms-integer-field[@formcontrolname='priority']//input")
     private WebElement priority;
 
+    @FindBy(xpath = "(//span[text()='Stage'])[3]")
+    private WebElement stage;
+    @FindBy(xpath = "//span[text()=' Student Registration ']/preceding-sibling::mat-pseudo-checkbox")
+    private WebElement studentRegistration;
+
+    @FindBy(xpath = "//span[text()='Student Registration']")
+    private WebElement stageEdit;
+    @FindBy(xpath = "//span[text()=' Examination ']/preceding-sibling::mat-pseudo-checkbox")
+    private WebElement examination;
+
+
 
 
     @FindBy(xpath = "//div[@role='listbox']//span[text()=' Classroom ']")
@@ -193,7 +204,6 @@ public class DialogContent extends Parent {
             case "gradeLevelEdit":
                 myElement = gradeLevelEdit;
                 break;
-
             case "editButton":
                 myElement = editButton;
                 break;
@@ -225,6 +235,18 @@ public class DialogContent extends Parent {
                 break;
             case "searchResultCell":
                 myElement = searchResultCell;
+                break;
+            case "stage":
+                myElement = stage;
+                break;
+            case "studentRegistration":
+                myElement = studentRegistration;
+                break;
+            case "examination":
+                myElement = examination;
+                break;
+            case "stageEdit":
+                myElement = stageEdit;
                 break;
 
         }
