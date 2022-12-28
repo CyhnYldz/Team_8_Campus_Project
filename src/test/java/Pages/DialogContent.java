@@ -94,6 +94,26 @@ public class DialogContent extends Parent {
     private WebElement priority;
 
 
+
+    @FindBy(xpath = "//div[@role='listbox']//span[text()=' Classroom ']")
+    private WebElement listclassroomComboBox;
+    @FindBy(xpath = "//span[text()=' Laboratory ']")
+    private WebElement laboratoryComboBox;
+    @FindBy(xpath = "//span[text()='Classroom']")
+    private WebElement classroomComboBox;
+
+
+    @FindBy(xpath = "//span[text()=' Other ']") private WebElement otherComboBox;
+    @FindBy(xpath = "//ms-integer-field[@formcontrolname='capacity']//input") private WebElement capacityInput;
+    @FindBy(xpath = "(//div[@role='tab'])[1]") private WebElement schoolDepartment;
+    @FindBy(xpath = "(//div[@role='tab'])[2]//div/span") private WebElement section;
+    @FindBy(xpath = "(//div[@role='tab'])[3]//div/span") private WebElement constants;
+    @FindBy(xpath = "(//span[@class='mat-button-wrapper']/span)[1]") private WebElement schoolDepartmentSectionSaveButton;
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='key']//input") private WebElement keyInput;
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='value']//input") private WebElement valueInput;
+
+
+
     WebElement myElement;
 
     public void findAndSend(String strlement, String value) {
@@ -133,6 +153,10 @@ public class DialogContent extends Parent {
                 case "searchInputDescription":
                 myElement = searchInputDescription;
                 break;
+            case "capacityInput": myElement = capacityInput;break;
+            case "keyInput": myElement = keyInput;break;
+            case "valueInput": myElement = valueInput;break;
+
 
         }
 
@@ -173,6 +197,14 @@ public class DialogContent extends Parent {
             case "editButton":
                 myElement = editButton;
                 break;
+            case "classroomComboBox": myElement = classroomComboBox;break;
+            case "listclassroomComboBox": myElement = listclassroomComboBox;break;
+            case "laboratoryComboBox": myElement = laboratoryComboBox;break;
+            case "otherComboBox": myElement = otherComboBox;break;
+            case "schoolDepartment": myElement = schoolDepartment;break;
+            case "section": myElement = section;break;
+            case "constants": myElement = constants;break;
+            case "schoolDepartmentSectionSaveButton": myElement = schoolDepartmentSectionSaveButton;break;
 
         }
 
