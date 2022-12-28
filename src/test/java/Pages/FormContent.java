@@ -20,7 +20,7 @@ public class FormContent extends Parent{
     public void findAndClick(String strlement) {
         //element get :burda string isimden weblemente ulaşıcam
         switch (strlement) {
-            case "academicPeriod": myElement = nameInput;
+            case "nameInput": myElement = nameInput;
                 break;
 
 
