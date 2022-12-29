@@ -103,6 +103,27 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//span[text()=' Examination ']/preceding-sibling::mat-pseudo-checkbox")
     private WebElement examination;
 
+    @FindBy(xpath = "//span[text()='Text']")
+    private WebElement fieldType;
+
+    @FindBy(css = "svg[data-icon='plus']")
+    private WebElement addButtonFields;
+
+    @FindBy(xpath = "//span[text()=' Integer ']")
+    private WebElement integer;
+
+    @FindBy(css = "[data-placeholder='IBAN']")
+    private WebElement IBAN;
+
+    @FindBy(xpath = "(//span[text()='Currency'])[3]")
+    private WebElement currency;
+
+    @FindBy(xpath = "//span[text()=' TRY ']")
+    private WebElement TRY;
+
+    @FindBy(css = "[data-placeholder='Integration Code']")
+    private WebElement iCodeInBankAccount;
+
 
 
 
@@ -167,6 +188,8 @@ public class DialogContent extends Parent {
             case "capacityInput": myElement = capacityInput;break;
             case "keyInput": myElement = keyInput;break;
             case "valueInput": myElement = valueInput;break;
+            case "IBAN": myElement = IBAN;break;
+            case "iCodeInBankAccount": myElement = iCodeInBankAccount;break;
 
 
         }
@@ -215,6 +238,11 @@ public class DialogContent extends Parent {
             case "section": myElement = section;break;
             case "constants": myElement = constants;break;
             case "schoolDepartmentSectionSaveButton": myElement = schoolDepartmentSectionSaveButton;break;
+            case "fieldType": myElement = fieldType;break;
+            case "addButtonFields": myElement = addButtonFields;break;
+            case "integer": myElement = integer;break;
+            case "currency": myElement = currency;break;
+            case "TRY": myElement = TRY;break;
 
         }
 
