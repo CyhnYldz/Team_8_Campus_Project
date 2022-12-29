@@ -46,7 +46,7 @@ Feature: Document Types Functionality
       | nameInput | <name> |
 
     And Click on the element in the Dialog Content
-      | stageEdit           |
+      | stage           |
       | studentRegistration |
       | examination         |
 
@@ -62,19 +62,19 @@ Feature: Document Types Functionality
       | name   |
       | CanMet |
 
-  Scenario Outline: Delete Document
-    Given Click on the element in left nav
-      | setupOne     |
-      | parameters   |
-      | documentType |
-
-    When User delete item from Dialog
-      | <name> |
-
-    Then Success message should be displayed
-
-
-    Examples:
-      | name   |
-      | CanMet |
+#  Scenario Outline: Delete Document
+#    Given Click on the element in left nav
+#      | setupOne     |
+#      | parameters   |
+#      | documentType |
+#
+#    When User delete item from Dialog
+#      | <name> |
+#
+#    Then Success message should be displayed
+#
+#
+#    Examples:
+#      | name   |
+#      | CanMet |
 
