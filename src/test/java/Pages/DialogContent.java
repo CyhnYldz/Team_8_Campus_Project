@@ -93,7 +93,7 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//ms-integer-field[@formcontrolname='priority']//input")
     private WebElement priority;
 
-    @FindBy(xpath = "[formcontrolname='attachmentStages']")
+    @FindBy(xpath = "(//span[text()='Stage'])[3]")
     private WebElement stage;
     @FindBy(xpath = "//span[text()=' Student Registration ']/preceding-sibling::mat-pseudo-checkbox")
     private WebElement studentRegistration;

@@ -28,7 +28,6 @@ Feature: Document Types Functionality
 
     Then Success message should be displayed
 
-
     Examples:
       | name   |
       | MetCan |
@@ -39,18 +38,7 @@ Feature: Document Types Functionality
       | parameters   |
       | documentType |
 
-    When Click on the element in the Dialog Content
-      | editButton |
-
-    And User sending the keys in Form Content
-      | nameInput | <name> |
-
-    And Click on the element in the Dialog Content
-      | stage           |
-      | studentRegistration |
-      | examination         |
-
-    And User press ESC button on keyboard
+    When User Edit The "<name>" "<nameInput>"
 
     And Click on the element in the Dialog Content
       | saveButton |
@@ -59,22 +47,21 @@ Feature: Document Types Functionality
 
 
     Examples:
+      | name   | nameInput |
+      | MetCan | CanMet    |
+
+  Scenario Outline: Delete Document
+    Given Click on the element in left nav
+      | setupOne     |
+      | parameters   |
+      | documentType |
+
+    When User delete item from Dialog
+      | <name> |
+
+    Then Success message should be displayed
+
+    Examples:
       | name   |
       | CanMet |
-
-#  Scenario Outline: Delete Document
-#    Given Click on the element in left nav
-#      | setupOne     |
-#      | parameters   |
-#      | documentType |
-#
-#    When User delete item from Dialog
-#      | <name> |
-#
-#    Then Success message should be displayed
-#
-#
-#    Examples:
-#      | name   |
-#      | CanMet |
 
