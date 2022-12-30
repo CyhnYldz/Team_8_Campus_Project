@@ -1,4 +1,4 @@
-Feature: Fields Functionality
+Feature: Bank Accounts Functionality
 
   Background:
     Given Navigate to Campus

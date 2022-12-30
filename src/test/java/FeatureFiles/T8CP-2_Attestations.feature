@@ -1,4 +1,4 @@
-Feature: Human Resources Functionality
+Feature: Human Resources Attestations Functionality
 
   Background:
     Given Navigate to Campus

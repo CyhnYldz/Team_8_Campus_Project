@@ -1,4 +1,4 @@
-Feature: Human Resources Functionality
+Feature: Human Resources Positions Functionality
 
   Background:
     Given Navigate to Campus
@@ -6,7 +6,7 @@ Feature: Human Resources Functionality
     Then User should login successfully
 
 
-  Scenario Outline: Create Position
+  Scenario Outline: Create Positions
 
     And Click on the element in left nav
       | humanResources      |
