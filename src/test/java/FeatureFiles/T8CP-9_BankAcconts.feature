@@ -36,11 +36,9 @@ Feature: Fields Functionality
       | parameters   |
       | bankAccounts |
 
-    And Click on the element in the Dialog Content
-      | editButton |
+    When User Edit The "<name>" "<nameInput>"
 
     And User sending the keys in Dialog Content
-      | nameInput          | <name> |
       | IBAN               | <iban> |
       | iCodeInBankAccount | <code> |
 
@@ -50,8 +48,8 @@ Feature: Fields Functionality
     Then Success message should be displayed
 
     Examples:
-      | name   | iban        | code |
-      | canmet | TR987654321 | 4321 |
+      | name   | nameInput | iban        | code |
+      | MetCan | CanMet    | TR987654321 | 4321 |
 
   Scenario: Delete Bank Account
     And Click on the element in left nav
@@ -60,7 +58,7 @@ Feature: Fields Functionality
       | bankAccounts |
 
     When User delete item from Dialog
-      | canmet |
+      | CanMet |
 
     Then Success message should be displayed
 

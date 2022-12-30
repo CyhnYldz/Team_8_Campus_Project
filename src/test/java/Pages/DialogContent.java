@@ -98,8 +98,6 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//span[text()=' Student Registration ']/preceding-sibling::mat-pseudo-checkbox")
     private WebElement studentRegistration;
 
-    @FindBy(xpath = "//span[text()='Student Registration']")
-    private WebElement stageEdit;
     @FindBy(xpath = "//span[text()=' Examination ']/preceding-sibling::mat-pseudo-checkbox")
     private WebElement examination;
 
@@ -243,6 +241,15 @@ public class DialogContent extends Parent {
             case "integer": myElement = integer;break;
             case "currency": myElement = currency;break;
             case "TRY": myElement = TRY;break;
+            case "stage":
+                myElement = stage;
+                break;
+            case "studentRegistration":
+                myElement = studentRegistration;
+                break;
+            case "examination":
+                myElement = examination;
+                break;
 
         }
 
@@ -264,18 +271,7 @@ public class DialogContent extends Parent {
             case "searchResultCell":
                 myElement = searchResultCell;
                 break;
-            case "stage":
-                myElement = stage;
-                break;
-            case "studentRegistration":
-                myElement = studentRegistration;
-                break;
-            case "examination":
-                myElement = examination;
-                break;
-            case "stageEdit":
-                myElement = stageEdit;
-                break;
+
 
         }
 

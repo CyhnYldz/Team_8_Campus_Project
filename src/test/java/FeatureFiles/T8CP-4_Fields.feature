@@ -18,14 +18,14 @@ Feature: Fields Functionality
       | nameInput | <name> |
 
     And Click on the element in the Dialog Content
-      | fieldType |
-      | integer |
+      | fieldType  |
+      | integer    |
       | saveButton |
 
     Then Success message should be displayed
 
     Examples:
-      | name |
+      | name   |
       | metcan |
 
   Scenario Outline: Edit Field
@@ -34,20 +34,17 @@ Feature: Fields Functionality
       | parameters |
       | fields     |
 
-    And Click on the element in the Dialog Content
-      | editButton |
-
-    And User sending the keys in Form Content
-      | nameInput | <name> |
+    When User Edit The "<name>" "<nameInput>"
 
     And Click on the element in the Dialog Content
       | saveButton |
 
     Then Success message should be displayed
 
+
     Examples:
-      | name |
-      | canmet |
+      | name   | nameInput |
+      | MetCan | CanMet    |
 
   Scenario: Delete Field
     And Click on the element in left nav
@@ -56,7 +53,7 @@ Feature: Fields Functionality
       | fields     |
 
     When User delete item from Dialog
-      | canmet |
+      | CanMet |
 
     Then Success message should be displayed
 
