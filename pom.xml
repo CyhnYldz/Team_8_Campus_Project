@@ -30,7 +30,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>6.8.7</version>
+            <version>7.4.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -73,11 +73,7 @@
             <version>5.2.0</version>
         </dependency>
 
-        <dependency> <!-- for writing tests -->
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.4.0</version>
-        </dependency>
+
         <dependency>  <!-- for assertions -->
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-all</artifactId>
