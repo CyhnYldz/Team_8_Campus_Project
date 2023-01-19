@@ -11,6 +11,7 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
 
 public class T8CP8_SchoolDepartmentTest {
     Cookies cookies;
@@ -77,6 +78,31 @@ public class T8CP8_SchoolDepartmentTest {
        ;
 
 
+    }
+    @Test(dependsOnMethods = "createDepartment",priority = 2)
+    public void updateDepartment(){
+        name = getRandomName();
+        code = getRandomCode();
+
+        Department department  = new Department(name,code);
+        department.setSchool("6390f3207a3bcb6a7ac977f9");
+        department.setId(departmentID);
+
+
+        given()
+                .cookies(cookies)
+                .contentType(ContentType.JSON)
+                .body(department)
+
+                .when()
+                .put("school-service/api/department")
+
+                .then()
+                .log().body()
+                .statusCode(200)
+                .body("name",equalTo(name))
+
+        ;
     }
 }
 class Department{
