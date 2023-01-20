@@ -14,7 +14,7 @@ import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 
 
-public class T8CP_04_Fields {
+public class T8CP_04_Fields_API {
 
     Cookies cookies;
     String fieldID;
